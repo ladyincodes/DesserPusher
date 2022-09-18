@@ -82,11 +82,6 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         binding.dessertButton.setImageResource(currentDessert.imageId)
     }
 
-    override fun onStart() {
-        super.onStart()
-        Timber.i("onStart called")
-    }
-
     /**
      * Updates the score when the dessert is clicked. Possibly shows a new dessert.
      */
@@ -152,5 +147,37 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             R.id.shareMenuButton -> onShare()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    /** Lifecycle Methods **/
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("onDestroy called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Timber.i("onRestart called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("onStop called")
     }
 }
